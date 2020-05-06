@@ -1,8 +1,10 @@
+com\myworks\usermaster\dto\UserMasterDTO.class
 com\myworks\usermaster\repository\UserMasterRepository.class
 com\myworks\usermaster\SwaggerConfiguration.class
 com\myworks\usermaster\model\CMSRole.class
 com\myworks\usermaster\UserMasterApplication.class
 com\myworks\usermaster\model\Permission.class
+com\myworks\usermaster\dto\CMSRoleDTO.class
 com\myworks\usermaster\model\UserMaster.class
 com\myworks\usermaster\service\UserMasterService.class
 com\myworks\usermaster\controller\UserMasterController.class

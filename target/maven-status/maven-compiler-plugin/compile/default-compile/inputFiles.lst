@@ -1,6 +1,8 @@
 C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\SwaggerConfig.java
 C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\model\CMSRole.java
+C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\dto\CMSRoleDTO.java
 C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\model\Permission.java
+C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\dto\UserMasterDTO.java
 C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\service\UserMasterService.java
 C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\controller\UserMasterController.java
 C:\Users\Santhi\git\user-master-api\src\main\java\com\myworks\usermaster\repository\UserMasterRepository.java
