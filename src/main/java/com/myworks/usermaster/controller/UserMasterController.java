@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myworks.usermaster.dto.UserMasterDTO;
-import com.myworks.usermaster.model.UserMaster;
 import com.myworks.usermaster.service.UserMasterService;
 
 @RestController
@@ -31,7 +30,7 @@ public class UserMasterController {
 	}
 	
 	@PostMapping("/usermaster")
-	public UserMaster saveUserMaster(@RequestBody UserMaster userMaster){
-		return userMasterService.save(userMaster);
+	public UserMasterDTO saveUserMaster(@RequestBody UserMasterDTO userMasterDto){
+		return userMasterService.save(userMasterDto);
 	}
 }

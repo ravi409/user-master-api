@@ -1,5 +1,6 @@
 package com.myworks.usermaster.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -42,6 +43,9 @@ public class CMSRole {
 	}
 
 	public Set<Permission> getAssignedPermissions() {
+		if(assignedPermissions == null){
+			assignedPermissions = new HashSet<>();
+		}
 		return assignedPermissions;
 	}
 

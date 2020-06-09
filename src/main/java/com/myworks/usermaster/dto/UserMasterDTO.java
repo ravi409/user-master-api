@@ -3,14 +3,6 @@ package com.myworks.usermaster.dto;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-
 import com.myworks.usermaster.model.CMSRole;
 import com.myworks.usermaster.model.Permission;
 import com.myworks.usermaster.model.UserMaster;
@@ -31,15 +23,31 @@ public class UserMasterDTO {
 	}
 	
 	public UserMasterDTO(UserMaster userMaster) {
-		this.userMasterId =userMaster.getUserMasterId();
-		this.userId = userMaster.getUserId();
-		this.userName = userMaster.getUserName();
-		this.keyclockId = userMaster.getKeyclockId();
-		this.emailId =userMaster.getEmailId();
-		for(CMSRole cmsRole: userMaster.getRoles()){
-			this.getRoles().add(new CMSRoleDTO(cmsRole));
-			this.getAssignedPermissions().addAll(cmsRole.getAssignedPermissions());
+		if(userMaster != null){
+			this.userMasterId =userMaster.getUserMasterId();
+			this.userId = userMaster.getUserId();
+			this.userName = userMaster.getUserName();
+			this.keyclockId = userMaster.getKeyclockId();
+			this.emailId =userMaster.getEmailId();
+			for(CMSRole cmsRole: userMaster.getRoles()){
+				if(cmsRole != null){
+					this.getRoles().add(new CMSRoleDTO(cmsRole));				
+					this.getAssignedPermissions().addAll(cmsRole.getAssignedPermissions());
+				}
+			}
 		}
+	}
+	public UserMaster toEntity(){
+		UserMaster um=new UserMaster();
+		um.setUserMasterId(this.userMasterId);
+		um.setUserId(this.userId);
+		um.setUserName(this.userName);
+		um.setKeyclockId(this.keyclockId);
+		um.setEmailId(this.emailId);
+		for(CMSRoleDTO roleDto: this.getRoles()){
+			um.getRoles().add(roleDto.toEntity());
+		}
+		return um;
 	}
 
 	public String getUserId() {
